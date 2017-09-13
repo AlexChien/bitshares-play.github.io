@@ -15,15 +15,21 @@ gem 'ckeditor'
 gem 'rails_admin'
 gem 'devise'
 gem 'cancan'
-
+gem 'whenever', :require => false
 
 group :development do
   gem 'better_errors'
-  gem 'capistrano', '~> 3.0.1'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails', '~> 1.1.0'
+
+  gem 'capistrano', '3.3.3'
+  gem 'capistrano-rails'
   gem 'capistrano-rails-console'
-  gem 'capistrano-rvm', '~> 0.1.1'
+  gem 'capistrano-passenger'
+  # gem 'rvm1-capistrano3', require: false
+  gem 'capistrano-rvm'
+  gem 'capistrano-ssh-doctor'
+  gem 'capistrano-upload', require: false
+  gem 'capistrano-bundler'
+
   gem 'guard-bundler'
   gem 'guard-rails'
   gem 'guard-rspec'
