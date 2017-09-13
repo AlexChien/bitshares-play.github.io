@@ -6,16 +6,17 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
-group :development, :test do
-  gem 'byebug'
-  gem 'web-console', '~> 2.0'
-  gem 'spring'
-end
+gem 'paperclip'
 gem 'bootstrap-sass'
-gem 'devise'
 gem 'high_voltage'
 gem 'mysql2', '~> 0.3.18'
 gem 'simple_form'
+gem 'ckeditor'
+gem 'rails_admin'
+gem 'devise'
+gem 'cancan'
+
+
 group :development do
   gem 'better_errors'
   gem 'capistrano', '~> 3.0.1'
@@ -37,6 +38,11 @@ group :development, :test do
   gem 'faker'
   gem 'rspec-rails'
   gem 'thin'
+  gem 'pry'
+  gem 'byebug'
+  gem 'web-console', '~> 2.0'
+  gem 'spring'
+
 end
 group :test do
   gem 'capybara'

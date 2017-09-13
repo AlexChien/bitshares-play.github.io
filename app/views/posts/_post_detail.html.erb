@@ -1,0 +1,20 @@
+<div class="well post-container">
+  <%= image_tag post.cover.url(:cover), class: "img-responsive", alt: post.title if post.cover.file? %>
+
+  <div class="modal-header">
+    <h4 class="modal-title">
+      <h2><%= post.title %></h2>
+      <% if post.subtitle %>
+        <h3><%= post.subtitle %></h3>
+      <% end %>
+      <figure>
+        <figcaption><a href="#"><%= post.author %></a> on <%= l post.publish_at.to_date %></figcaption>
+      </figure>
+    </h4>
+  </div>
+  <div class="modal-body">
+    <%= post.content.try(:html_safe) %>
+
+    <%= link_to t('site.posts.back'), posts_path, class: 'btn btn-primary withripple' %>
+  </div>
+</div>

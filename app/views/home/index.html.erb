@@ -1,0 +1,348 @@
+<% content_for :js do -%>
+  <script type="text/javascript">
+    var lang = "cn";
+  </script>
+  <%= javascript_include_tag 'home', 'data-turbolinks-track' => 'reload' %>
+<% end -%>
+
+  <!-- hero starts -->
+    <div id="hero">
+      <div class="container">
+        <section class="row jumbotron">
+          <h1 class="logo">DAC PLAY</h1>
+          <!-- <p>产品众筹将于<br /><strong>北京时间2015年1月5日上午8时</strong><br />通过<a href='http://dacx.com/play' target='_blank'>DacX.com</a>平台进行</p> -->
+
+          <div class="row">
+
+            <h2 style="margin-bottom:1em;">关于DACPLAY路线图的重大调整</h2>
+            <p>区块链技术的发展日新月异，在14年DACPLAY旧版白皮书出来当时，市面上还没有成熟的智能合约框架，当时以太坊的第一个版本还没有出来，DACPLAY项目本身发源于比特股社区，为了实现游戏合约以及支持更强的可扩展功能，DACPLAY基于比特股1.0的框架开发了一些列有趣的娱乐性应用，包括有奖日志，简单游戏，红包等等，得到了用户的肯定和好评 ...</p>
+
+            <a class="btn btn-success btn-lg withripple" href="roadmap-201706.html"><%= t('site.hero.read_full') %><div class="ripple-wrapper"></div></a>
+            <a class="btn btn-success btn-lg withripple" href="../pdf/roadmap_201706.pdf" target="_blank"><%= t('site.hero.download_pdf') %><div class="ripple-wrapper"></div></a>
+
+          </div>
+
+          <% if false %>
+          <div id="release" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title"><%= t('site.release.title') %></h4>
+                </div>
+                <div class="modal-body">
+                  <p><%= t('site.release.body').html_safe %></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+          <% end %>
+
+        </section>
+      </div>
+      <!-- Progress bar -->
+      <!-- <div class="progress row-fluid">
+        <div class="ready-point hider" data-tip="<%= t('site.countdown.ready_tip') %>"><div class="marker"><%= t('site.countdown.ready') %></div></div>
+        <div class="start-point hider" data-tip="<%= t('site.countdown.start_tip') %>"><div class="marker"><%= t('site.countdown.start') %></div></div>
+        <div class="end-point hider"><div class="marker"><%= t('site.countdown.end') %></div></div>
+        <div class="bar" style="width: 0%;" data-percentage="52">
+          <div class="marker">52%</div>
+        </div>
+      </div> -->
+      <!-- Progress bar ends -->
+    </div>
+    <!--hero ends -->
+
+    <div id="download2" class="hide">
+      <div class="container">
+        <section class="row">
+          <h1><%= t('site.hero.download_client2') %></h1>
+          <p class="release-intro text-center"></p>
+          <div class="row downloads-container text-center"></div>
+
+          <div class="center" style="text-align:center; margin-top:3em;">
+            <p><%= t('site.hero.upgrade_notice') %></p>
+            <div class="row">
+              <a class="btn btn-success btn-lg withripple" href="https://wallet.dacplay.org" target="_blank"><%= t('site.hero.start_use_web_wallet') %><div class="ripple-wrapper"></div></a>
+              <a class="btn btn-success btn-lg withripple" href="#download2"><%= t('site.hero.download_2') %><div class="ripple-wrapper"></div></a>
+            </div>
+            <div class="row">
+              <a class="btn btn-default btn-lg withripple" href="javascript:void(0);" data-toggle="modal" data-target="#download"><%= t('site.hero.download_5') %><div class="ripple-wrapper"></div></a>
+            </div>
+          </div>
+
+        </section>
+      </div>
+    </div>
+
+    <!-- <div id="download" class="hide">
+      <div class="container">
+        <section class="row">
+          <h1><%= t('site.hero.download_client') %></h1>
+          <p class="release-intro text-center"></p>
+          <div class="row downloads-container text-center"></div>
+        </section>
+      </div>
+    </div> -->
+
+    <div id="download" class="modal fade" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title"><%= t('site.hero.download_client') %></h4>
+          </div>
+          <div class="modal-body">
+            <p class="release-intro text-center"></p>
+            <div class="row downloads-container text-center"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- feature starts -->
+    <div id="about">
+      <div class="container">
+        <section class="row feature">
+          <h1><%= t('site.about.title') %></h1>
+          <p class="lead"><%= t('site.about.subtitle') %></p>
+          <% delay = 1 %>
+          <% t('site.about.feature').each do |feature| %>
+          <div class="col-lg-4 triggerAnimation animated feature-item" data-animate="fadeInUp" data-delay="<%= delay * 0.1 %>">
+            <i class="<%= feature['icon'] %> feature-icon img-circle"></i>
+            <h3><%= feature[:title] %></h3>
+            <p class="text-left"><%= feature[:intro] %></p>
+            <p><a class="btn btn-primary" href="#whitepaper" role="button"><%= t(:"site.button.view_detail").try(:html_safe) %></a></p>
+          </div><!-- /.col-lg-4 -->
+          <% delay += 1 %>
+          <% end %>
+        </section>
+      </div>
+    </div>
+    <!-- feature ends -->
+
+    <!-- whitepaper starts -->
+    <div id="whitepaper">
+      <div class="container">
+        <section class="row whitepaper">
+          <h1 class="triggerAnimation animated" data-animate="fadeInUp"><%= t('site.whitepaper.title') %></h1>
+          <p class="whitepaper-item">
+            <a class="btn btn-primary" href="<%= t('site.whitepaper.link_tech') %>" role="button" target="_blank"><%= t('site.whitepaper.tech') %></a>
+            <a class="btn btn-primary" href="<%= t('site.whitepaper.link_nonetech') %>" role="button" target="_blank"><%= t('site.whitepaper.nonetech') %></a>
+          </p>
+        </section>
+      </div>
+    </div>
+    <!--whitepaper ends -->
+
+
+    <!-- crowdfund starts -->
+    <div id="crowdfund">
+      <div class="container">
+        <section class="row crowdfund">
+          <h1 class="triggerAnimation animated" data-animate="fadeInUp"><%= t('site.crowdfund.title') %></h1>
+
+          <div class="crowdfund-item risk-notify-container" style="margin-bottom:3em;">
+            <p>
+              <%= t('site.crowdfund.completed') %>
+              <span class="cf_stat" style="display:none;">
+                <%= t('site.crowdfund.stat.raised') %>: <strong id="cf_raised"></strong>
+              </span>
+            </p>
+          </div>
+
+
+          <%= t('site.crowdfund.content').html_safe %>
+
+
+          <div class="crowdfund-item risk-notify-container">
+            <div class="risk-notify">
+              <a class="btn btn-success btn-lg" href="javascript:void(0);" data-toggle="modal" data-target="#risk-dialog"><%= t('site.crowdfund.reveal_btc_address') %></a>
+            </div>
+            <div class="btc-address-holder alert alert-info" role="alert">
+              <div class="address-content">
+                <a href="javascript:void(0)" class="btn btn-default btn-sm btn-fab btn-raised mdi-image-camera-alt mdi-material-teal pull-right" data-container="body" data-toggle="popover" data-content="<img src='../img/qr_3DPD7z66T7DXULvFZUsc4xNcVS2q68TM3u.png' style='width:100%;' />" data-placement="left" data-trigger="click hover" data-html="true"></a>
+                <%= t('site.crowdfund.address_label') %> <span class="address">3DPD7z66T7DXULvFZUsc4xNcVS2q68TM3u</span>
+              </div>
+            </div>
+          </div>
+          <div id="risk-dialog" class="modal fade" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title"><%= t('site.crowdfund.risk_title') %></h4>
+                </div>
+                <div class="modal-body">
+                  <%= t('site.crowdfund.risk_content') %>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-default" data-dismiss="modal"><%= t('site.crowdfund.cancel') %></button>
+                  <button class="risk_confirm_btn btn btn-primary" data-dismiss="modal"><%= t('site.crowdfund.ok') %></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="crowdfund-item">
+            <a class="btn btn-primary btn-lg" role="button" href="<%= t('site.crowdfund.link_prospectus') %>" target="_blank"><%= t('site.crowdfund.prospectus') %></a>
+            <a class="btn btn-primary btn-lg" role="button" href="http://dacx.com/play" target="_blank"><%= t('site.hero.visit_dacx') %></a>
+          </p>
+        </section>
+      </div>
+    </div>
+    <!--crowdfund ends -->
+
+    <!-- faq starts -->
+    <div id="faq">
+      <div class="container">
+        <section class="row faq">
+          <h1 class="triggerAnimation animated" data-animate="fadeInUp"><%= t('site.faq.title') %></h1>
+          <p class="lead triggerAnimation animated" data-animate="fadeInUp"><%= t('site.faq.subtitle') %></p>
+
+          <div class="panel-group" id="accordion">
+            <% qa_idx = 1 %>
+            <% t('site.faq.qas').each do |qa| %>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#q_<%= qa_idx %>">
+                    <%= qa[:q] %>
+                  </a>
+                </h4>
+              </div>
+              <div id="q_<%= qa_idx %>" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <%= qa[:a].try(:html_safe) %>
+                </div>
+              </div>
+            </div>
+            <% qa_idx += 1 %>
+            <% end %>
+
+          </div>
+
+          <p class="text-center">
+            <a class="btn btn-primary btn-lg" role="button" href="http://wiki.dacplay.org" target="_blank"><%= t('site.faq.visit_wiki') %></a>
+            <a class="btn btn-primary btn-lg" role="button" href="http://playtalk.org" target="_blank"><%= t('site.faq.visit_forum') %></a>
+        </section>
+      </div>
+    </div>
+    <!--faq ends -->
+
+    <!-- news starts -->
+    <div id="news">
+      <div class="container">
+        <section class="row">
+          <h1><%= t('site.news.title') %></h1>
+
+          <div class="news-container"></div>
+        </section>
+      </div>
+    </div>
+    <!-- news ends -->
+
+    <!-- snapshot -->
+    <div id="snapshot">
+      <div class="container">
+        <section class="row snapshot">
+          <h1 class="triggerAnimation animated" data-animate="fadeInUp"><%= t('site.snapshot.title') %></h1>
+          <p class="lead triggerAnimation animated" data-animate="fadeInUp"><%= t('site.snapshot.subtitle').html_safe %></p>
+          <% delay = 1 %>
+          <% t('site.snapshot.allocation').each do |loc| %>
+            <div class="col-md-4 triggerAnimation animated" data-animate="fadeInUp" data-delay="<%= delay * 0.2 %>">
+              <div class="well">
+                <div class="modal-header"><h4 class="modal-title"><%= loc[:holder] %><span class="pull-right text-muted"><%= loc[:percentage] %></span></h4></div>
+                <div class="modal-body"><p><%= loc[:description].try(:html_safe) %></p></div>
+              </div>
+            </div>
+
+            <% if delay % 3 == 0 %>
+              <div class="clearfix"></div>
+            <% end %>
+
+          <% delay += 1 %>
+          <% end %>
+        </section>
+      </div>
+    </div>
+    <!-- snapshot ends -->
+
+
+<% if false %>
+    <!-- team starts -->
+    <div id="team">
+      <div class="container">
+        <section class="row team">
+          <h1 class="triggerAnimation animated" data-animate="fadeInUp"><%= t('site.team.title') %></h1>
+          <p class="lead"><%= t('site.team.subtitle') %></p>
+          <% delay = 1 %>
+          <% t('site.team.members').each do |team| %>
+          <div class="col-xs-3 text-center triggerAnimation animated"  data-animate="fadeInUp" data-delay="<%= delay * 0.1 %>">
+            <img src="../img/team/<%= team["image"] %>" class="portrait img-circle" alt="<%= team["name"] %>">
+            <h4><%= team["name"] %></h4>
+            <p><%= team["role"] %></p>
+          </div>
+          <% delay += 1 %>
+          <% end %>
+        </section>
+      </div>
+    </div>
+    <!--team ends -->
+<% end %>
+
+    <!-- contact starts -->
+    <div id="contact">
+      <div class="container">
+        <section class="triggerAnimation animated" data-animate="fadeInUp">
+          <h1><%= t('site.contact.title') %></h1>
+          <p class="lead"><%= t('site.contact.subtitle') %></p>
+
+          <div class="row">
+            <form id="mailing_list" class="form-horizontal col-lg-6" action="" method="post" target="_blank">
+              <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label"><%= t('site.contact.email') %></label>
+                <div class="col-lg-10">
+                  <input type="email" class="form-control" id="inputEmail" name="EMAIL" placeholder="<%= t('site.contact.email_tip') %>">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-2 control-label"><%= t('site.contact.language') %></label>
+                <div class="col-lg-10">
+                  <div class="radio radio-primary">
+                    <label>
+                      <input type="radio" name="langpref" id="langPrefEN" value="en" checked="checked">
+                      English
+                    </label>
+                  </div>
+                  <div class="radio radio-primary">
+                    <label>
+                      <input type="radio" name="langpref" id="langPrefCN" value="zh-CN">
+                      中文
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                  <button type="submit" class="btn btn-primary"><%= t('site.subscribe.title') %></button>
+                </div>
+              </div>
+            </form>
+
+            <div class="col-lg-5 col-lg-offset-1 contact-detail">
+              <% if false %>
+              <p><i class="mdi-maps-place"></i><%= t('site.contact.address') %></p>
+              <p><i class="mdi-communication-call"></i><%= t('site.contact.phone') %></p>
+              <p><i class="mdi-action-print"></i><%= t('site.contact.fax') %></p>
+              <% end %>
+              <p><i class="mdi-communication-email"></i><%= t('site.subscribe.mail') %></p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <!-- contact ends -->

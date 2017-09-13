@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : t("site.header.title") %></title>
+    <meta name="keyword" content="<%= content_for?(:keyword) ? yield(:keyword) : t("site.header.keyword") %>">
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : t("site.header.description") %>">
+
+    <%= render 'layouts/favicon' %>
+
+    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+      <%= javascript_include_tag 'ie'%>
+    <![endif]-->
+
+    <%= csrf_meta_tags %>
+  </head>
+  <body id="<%= @page_id || "" %>" data-spy="scroll" data-offset="0" data-target="#page-nav-scrollnav">
+    <!-- wechat icon -->
+    <%= image_tag "logo@300.png", alt: "DACPLAY Foundation", class: "hide" %>
+
+    <%= render 'layouts/navigation' %>
+
+    <%= render 'layouts/messages' %>
+    <%= yield %>
+
+    <%= render 'layouts/footer' %>
+
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <%= javascript_include_tag 'vendor', 'data-turbolinks-track' => 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+
+    <%= yield :js %>
+  </body>
+</html>

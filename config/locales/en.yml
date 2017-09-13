@@ -20,4 +20,288 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  site:
+    header:
+      title: "DACPLAY Foundation"
+      keyword: "DAC PLAY, BitShares, Crypto, Game, Bitcoin, MarketPlace, Blockchain"
+      description: "DAC PLAY is an experiment to demonstrate and validate how a decentralized, autonomous game assets platform might be implemented. The platform features multiple provable games of chance, as well as the ability to integrate various third party games and their asset systems. Shares of PLAY(PLS) combined with all of the assets of both built-in and third party games form a free marketplace and exchange. Systems like this are also known as Decentralized Autonomous Companies (DAC)."
+    
+    nav:
+      home: Home
+      about: About
+      faq: FAQ
+      posts: Blog
+      team: Team
+      snapshot: Snapshot
+      whitepaper: White Paper
+      crowdfund: Crowdfunding
+      contact: Contact
+      lang: Language
+      resources: More Resources
+      wiki: WIKI
+      forum: PLAYTALK Forum
+      blocks: 
+        title: Blockchain
+        asia: Asia Pacific Region
+        america: North America Region
+
+    hero:
+      line1: 'Crowdfunding will start on <br /><strong>Jan 5th, 2015 (UTC time)</strong> <br />through <a href="http://dacx.com/play" target="_blank">DacX.com</a> '
+      more: LEARN ABOUT DETAIL
+      visit_dacx: Visit dacx.com
+      download_client: Download PLS1 Network 0.5.0 Client
+      download_client2: Download DACPLAY2 Newest Client
+      upgrade_notice: DACPLAY is upgrading to 2.0.  Old network is stopped at block 4674453.  Please download 0.5.0 client to export your wallet key and import them in 2.0 web wallet to use.
+      download_5: Download PLS1 Network 0.5.0 client
+      download_2: Download Newest Client
+      start_use_web_wallet: Start using 2.0 web wallet
+      read_full: Full Article
+      download_pdf: Download PDF
+  
+    release:
+      title: 关于DACPLAY路线图的重大调整
+      body: |
+             <div class="release"><p>区块链技术的发展日新月异，在14年DACPLAY<a href="https://dacplay.org/cn/#whitepaper">旧版白皮书</a>出来当时，市面上还没有成熟的智能合约框架，当时以太坊的第一个版本还没有出来，DACPLAY项目本身发源于比特股社区，为了实现游戏合约以及支持更强的可扩展功能，DACPLAY基于比特股1.0的框架开发了一些列有趣的娱乐性应用，包括有奖日志，简单游戏，红包等等，得到了用户的肯定和好评。后来为了构建可以扩展的生态系统，我们继续集中精力研发自己的合约脚本系统，为此，我们花费了大量的时间，将V8的Javascript脚本引擎嵌入到比特股1.0的开发框架中，并实现了让第三方开发者可以在DACPLAY上开发游戏的脚本合约。</p>
+             <p>后来因为比特股1.0技术框架的一些漏洞，DACPLAY的系统经历了<a href="http://weibo.com/ttarticle/p/show?id=2309403988755882092781">一次严重的攻击</a> ，在这次攻击之后，开发者团队决定将技术框架升级至石墨烯，也就是比特股2.0的技术框架，因为这次升级，原先的V8的Javascript脚本引擎也需要做相应升级。在区块链的底层协议以及支持V8智能合约的开发上，开发团队花费了大量时间精力和时间，却没有得到一个满意的成熟智能合约框架。长时间的熊市对团队开发资金和游戏合约生态社区构建也产生影响。然而，在过去的两年中，以太坊等通用智能合约平台发展壮大起来，为我们提供了更成熟更好的技术框架和平台，经过反思和总结，我们突然发现，开发团队一直尝试开发的底层平台已经有了现成的并且更好的选择，例如以太坊等等，我们问自己一个问题：何不直接在以太坊上面开发应用平台？为此，我们对以太坊做了一些深入学习和研究，发现技术上基本的条件已经具备，虽然在性能上可能有所影响，但是能够用solidity开发和支持的游戏种类已经非常多种多样，具备构成DACPLAY生态的条件。在以太坊上开发应用的一个好处是可以兼容很多的协议，例如ERC-20协议，Bancor协议等等，可以立即获得支持这些协议应用的好处，而且越来越多的协议正在被开发出来，最近一段时间，基于智能合约开发的区块链应用有繁荣壮大的趋势，像DigixDao, FirstBlood，MakerDAO, Augur, BAT，Aragon, Status等应用都发展的很不错。并且，也有很多其他的通用的支持智能合约的区块链项目出现，像EOS等等，我们发现，通用的区块链技术平台（特别是支持EVM兼容的）和区块链应用分离正在成为一个趋势，我们团队可能很难同时做好这两件事，选择站在巨人的肩膀上，是更聪明的选择。</p>
+             <p>因此，经过开发团队的慎重考虑，我们决定对目前的技术框架做出一个大的方向调整：选择直接在以太坊公链网络上开发DACPLAY的一套合约来实现白皮书中的设计，而非自己设计开发一套独立的链。因为技术路线的调整，也吸取了过去的一些经验教训，我们对路线图和社区也会做出一些大的调整。</p>
+             <p>这些调整主要包括：</p>
+             <ol>
+               <li>
+                 <p>由基于石墨烯+V8脚本合约的技术路线，切换至直接在以太坊公链上开发一套智能合约。这些合约包括但不仅限于(目前为Draft版本)：</p>
+               </li>
+               <ol>
+                 <li>
+                   <p>PLAY新的<a href="https://github.com/dacplayproject">Github库</a>，用于管理这一套合约。</p>
+                 </li>
+                 <li>
+                   <p>一个兼容ERC-20的PLS Token合约，并支持将原先链上的PLS Token 1:1迁移过来，以及相应的Token迁移支持代码。</p>
+                 </li>
+                 <li>
+                   <p>Chip合约，主要实现的功能包括，游戏Chip资产和合约的注册与兑换，预留给游戏合约调用的账户余额更新接口。调用账户余额更新服务，PLS将作为燃料和手续费被消耗。每种游戏Chip资产的账户余额更新接口只能被对应注册的游戏合约调用。</p>
+                 </li>
+                 <li>
+                   <p>内置和外置的随机数服务合约，PLS将作为内置随机数合约的燃料。</p>
+                 </li>
+                 <li>
+                   <p>自动化治理和管理升级的合约</p>
+                 </li>
+                 <li>
+                   <p>各种游戏合约（含不依赖随机数的竞猜，对赌等合约和依赖随机数的合约两大类）</p>
+                 </li>
+               </ol>
+               <li>
+                 <p>路线图的调整：停止原先基于石墨烯框架开发支持V8游戏脚本合约的计划，转而实现一套合约应用，分几个阶段：</p>
+               </li>
+               <ol>
+                 <li>
+                   <p>旧的DACPLAY 2.0系统和Token的迁移工作(1-2个月)</p>
+                 </li>
+                 <li>
+                   <p>测试一些游戏合约以及测试合约框架(正在进行中)</p>
+                 </li>
+                 <li>
+                   <p>基础的框架合约和主Chip合约开发，GUI开发(4-6个月)</p>
+                 </li>
+                 <li>
+                   <p>典型游戏类型合约的开发 (待定)</p>
+                 </li>
+                 <li>
+                   <p>随机数合约的研究与改进。（待定）</p>
+                 </li>
+               </ol>
+               <li>
+                 <p>社区工作组的调整，将原先的开发团队，分设三个委员会，加强社区沟通和治理方面的工作：</p>
+               </li>
+               <ol>
+                 <li>
+                   <p>决策委员会：负责社区基金的管理使用并决定赞助哪些方向和工作，制定路线图和方向，治理等等</p>
+                 </li>
+                 <li>
+                   <p>社区委员会：负责社区的沟通，市场推广，教育等等。</p>
+                 </li>
+                 <li>
+                   <p>开发委员会：由DACPLAY开源项目重要开发成员组成，并参与协调各个工作组(WG)工作</p>
+                 </li>
+               </ol>
+             </ol>
+             <p>最后，感谢大家一直以来的支持，我们一直相信DACPLAY将会是非常有潜力的项目，目前的开发团队也是区块链社区目前最坚持最资深的团队。</p>
+             <p>&nbsp;</p>
+             <p>DACPLAY开发团队</p>
+             <p>2017年6月13日</p></div>
+
+    about:
+      title: Draw The Future
+      subtitle: Decentralize All Things, No Middle Man!
+      content: DAC PLAY is an experiment to demonstrate and validate how a decentralized, autonomous game assets platform might be implemented. The platform features multiple provable games of chance, as well as the ability to integrate various third party games and their asset systems. Shares of PLAY(PLS) combined with all of the assets of both built in and third party games form a free marketplace and exchange. Systems like this are also known as Decentralized Autonomous Companies (DAC).
+      feature:
+        - title: Decentralized marketplace between crypto world and the game assets world
+          intro: Traditional game providers will be able to sell their game coins and game assets to people though DAC PLAY, which can be consider as the door opened to the crypto world and than the entire world.
+          icon: mdi-action-shopping-cart
+        - title: Blockchain based game platfrom
+          intro: Provable fair game and truly random number generation is always be a problem for games, the algorithm from BitShares DPOS, we first can use this service based on blockchain in games.
+          icon: mdi-hardware-gamepad
+        - title: Peer to peer game assets exchange
+          intro: DAC PLAY is not only a marketplace for selling goods like game coins and assets, people can also trade with each other with game coins peer to peer using exchange we provide.
+          icon: mdi-social-group
+
+    whitepaper:
+      title: DAC PLAY White Paper
+      read: Read Content  &raquo;
+      tech: Tehnical White Paper
+      nonetech: None-Technical White Paper
+      link_tech: ../pdf/BitSharesPlayWhitePaper_EN.pdf
+      link_nonetech: ../pdf/BitSharesPLAYNoneTechnical_EN.pdf
+
+    crowdfund:
+      title: DAC PLAY Crowdfunding
+      content: |
+        <p>Bitshares PLAY's crowdfunding is set to start at 00:00 (UTC) 2015.01.05 till 00:00 (UTC) 2015.02.02 on <a href="http://dacx.com/play" target="_blank">DACX.com</a> for a 28-day period. Investors can simply send Bitcoin to the specified address.</p>
+        <p>PLS(playshares) has a fixed amount of 2 billion, 20% (400 million) of which will be distributed for crowdfunding. For 1 btc, 100,000 PLS will be offered with a progressively decreasing bonus. For the first week, there will be a 30% of bonus;the second, 20%;the third, 10%;the fourth, none. The rest of the PLS that is not given out will be evenly distributed to investors of the previous four weeks (according to the proportion of the PLS they hold).</p>
+        <p>
+          <strong>Simply put:</strong>：
+            <ul>
+              <li>1st week: 1BTC=130,000PLS</li>
+              <li>2nd week: 1BTC=120,000PLS</li>
+              <li>3rd week: 1BTC=110,000PLS</li>
+              <li>4th week: 1BTC=100,000PLS</li>
+            </ul>
+        </p>
+        <p>When 3000BTC is gathered before 2015.02.02, the crowdfunding will be ended in advance. The BTC that is sent to the crowdfunding address will be given back to the sent address.</p>
+        <p>For example, if during the first week, 3000BTC is received, the crowdfunding will be ended with 390 million PLS distributed. Then the remaining 10 million PLS will be given to all that have participated in the crowdfunding, making 1 BTC with 133,333PLS of return. If in the end, the fund that is collected at the end of the 28-day raising period is less than 3000BTC, there will be more PLS left to give to the investors who have participated.</p>
+        <p>Due to the fact that the private key of Bitcoin is the only proof for the later distributed PLS's ownership, investors must send from where they control their own private keys (like wallets).</p>
+      prospectus: Prospectus
+      link_prospectus: ../pdf/BitSharesPlayProspectus_EN.pdf
+      address_label: "BTC Address:"
+      reveal_btc_address: Reveal BTC Address
+      risk_title: RISK DISCLOSURE
+      risk_content: |
+        <ol>
+        <li>Please confirm your perusal, understanding and acceptance of all the content on this webpage, the Whitepaper and the Crowdfunding Prospectus</li>
+        <li>Please confirm your willingness and voluntariness to participate in this crowdfunding, your full awareness of the risks associated therewith and your ability to withstand the worst case scenario</li>
+        <li>Please confirm the private key of your bitcoin sending address is under your control (please specifically note that no bitcoin shall be sent directly out of any exchange; for instance, Coinbase and Justpay.  Wallets like blockchain.info are acceptable.)</li>
+        </ol>
+      cancel: Cancel
+      ok: I understand the risk associated
+      completed: "Crowdfunding has completed"
+      stat:
+        raised: Raised
+        target: Target
+        completion: Completion
+  
+
+    team:
+      title: Team
+      subtitle: This is team subtitle
+      members:
+        - name: BitSuperLab
+          role: Rearch Center
+          image: BitSuperLab.png
+          bio: BitSuperLab is a research group focusing on crypto currencies and DACs. BitSuperLab is supporting DAC PLAY by contributing to the development and developing tools.
+        - name: Denny Wang
+          role: Project Leader
+          image: Denny.jpg
+          bio: Author of the DAC PLAY White Paper, DAC PLAY Lead Developer.
+        - name: Clar
+          role: C++ Developer
+          image: BitSuperLab.png
+          bio: C++ Developer
+        - name: Boombastic
+          role: Web Developer
+          image: Boombastic.jpg
+          bio: The creator of agsexplorer.com
+        - name: Lora
+          role: Designer
+          image: Lora.jpg
+          bio: Designer
+        - name: Cass
+          role: Designer
+          image: BitSuperLab.png
+          bio: Designer
+        - name: Qijun
+          role: Evangelist
+          image: Qijun.jpg
+          bio: Evangelist
+        - name: HeyD
+          role: Evangelist
+          image: BitSuperLab.png
+          bio: Evangelist
+
+    faq:
+      title: FAQ
+      subtitle:
+      qas:
+        - q: What's the token of this System?
+          a: Playshares (PLS) are the tokens of the system. PLS are designed first to be the shares of the DAC PLAY System, and thus the unit in which dividends are paid to PLS holders and delegates of PLAY are paid for their contributions to the system. Secondly, PLS are the token with which users purchase game assets (CHIPS) to play games. PLS provides an opportunity to expand the model of token distribution, and may explore models in which a game rewards winners with the tokens of the game system itself.
+        - q: What currency is used to play on-chain games?
+          a: CHIPS are the tokens necessary to play on-chain games. CHIPS are bought with PLS. The independent game developers are free to decide on the exchange rate of PLS and CHIPS as well as on what role CHIPS will play in their games.
+        - q: What's the consensus algorithm used in DAC PLAY?
+          a: DAC PLAY is using DPOS. The advantage of DPOS is that it allows for faster block confirmation and also allows for scalability to the level of VISA's 10,000 payment transactions per second. Meanwhile the system is still decentralized in that there is neither a single point of failure nor a single point of control. Delegates have the rather simple job of signing new blocks and can be fired on command if they do not perform their duties. Consensus on a whole is reached by stakeholders, whereas in traditional Proof Of Work schemes only hashing participants contribute to the network consensus, leaving shareholders who don’t mine unrepresented.
+        - q: What's the Random Number Generation(RNG) algorithm in DAC PLAY?
+          a: DAC PLAY is using a provable distributed RNG algorithm from DPOS. “Distributed” means that the random number of one block is generated by the previous 101 delegates’ revealed secret, so as long as at least one of them are honest, the resulting random number is truly random. “Provable” means that they need to publish the hash of their secrets to the blockchain in the next round. The revealed secret’s hash must be the hash they published last time. They can not cheat by revealing selective favourable secret because the hash of the secret must be included in previous produced block.
+        - q: What's the meaning of decentralized market place and platform?
+          a: Traditional online-game providers (take minecraft or game alliance as an example) can use DAC PLAY to issue their game tokens and use DAC PLAY as the public ledger to trade all in-game assets without any counterparty risk. After the coins are sold, they can be deposit to the various games and what is left over can be sold on the the DAC PLAY exhchange.
+        - q: When will DAC PLAY's crowdfunding start?
+          a: The crowdfunding of playshare (PLS) will start on Jan 5th, 2015 UTC through <a href="http://dacx.com/play" target="_blank">DacX.com</a>, please stay tuned!
+      visit_wiki: Visit WIKI
+      visit_forum: Visit PLAYTALK forum
+
+    contact:
+      subscribe: "Join Mailing List"
+      title: Want to keep up with this fast-evolving project?
+      subtitle: Subscribe to our mailing list to receive important updates!
+      email: Email
+      email_tip: Subscribe to receive updates
+      language: Language
+      address: 2020 Kraft Drive, Blacksburg, VA, United States, Blacksburg, VA 24060
+      phone: (+86) 021 8013 5185
+      fax: (+86) 021 8013 5399
+
+    snapshot:
+      title: Snapshot & Allocation
+      subtitle: Please visit <a href='http://dacx.com/play' target='_blank'>DacX.com</a> for crowdfunding detail
+      description: Bitshares PLAY is positioned to be a self-marketable and self-profitable DAC that would be able to blend into existing network systems to be a sustainable platform that encourages game assets and value-adding services. PLS is the main token of the system, the inital total supply of PLS will be 2 billion, with 100% as maximum delegate pay.
+      allocation:
+        - holder: BTS
+          percentage: 35%
+          description: Snapshot on BTS will be taken from the last block whose height is integral multiple of 10 before mid-night Dec 8, 2014
+        - holder: AGS
+          percentage: 10%
+          description: From 5th November 2014 snapshot, no action required other than import of private keys.
+        - holder: PTS
+          percentage: 10%
+          description: The block to take the snapshot on PTS is on November 5, 2014. This is also the anniversary snapshot for both BTS and PLAY.
+        - holder: Crowdfunding
+          percentage: 20%
+          description: Crowdfunding will start on Jan. 5th, 2015 UTC through <a href='http://dacx.com/play' target='_blank'>DacX.com</a>.
+        - holder: Development and Marketing
+          percentage: 15%
+          description: Long-term development, including a part to cover costs in pre-launch period.
+        - holder: Reserved Funds
+          percentage: 10%
+          description: Reserved fund is for specific purposes including Faucet, Business Development, Game Incubation, long-term ecosystem building. Reserved Fund will be locked on initial launch, and will be linear unlocked monthly after launch in 1 year.
+
+    button:
+      view_detail: View details &raquo;
+      learn_more: Learn More
+
+    subscribe:
+      title: Subscribe
+      mail: You can always drop us a line at info[at]dacplay.org
+
+    countdown:
+      days: Days
+      hours: Hours
+      minutes: Minutes
+      seconds: Seconds
+      ready: READY
+      ready_tip: Announce Crowdfunding Plan
+      start: START
+      start_tip: Crowdfunding Starts @ Jan. 5th, 2015
+      end: YEAH!
+
+    news:
+      title: Project Updates
+
+    posts:
+      read_more: Read more
+      back: Go back to list
