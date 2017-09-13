@@ -6,21 +6,16 @@
 <% end -%>
 
   <!-- hero starts -->
-    <div id="hero">
+    <div id="hero" style="<%= 'min-height:auto;' unless @post %>">
       <div class="container">
         <section class="row jumbotron">
           <h1 class="logo">DAC PLAY</h1>
+          <% if false %>
           <!-- <p>产品众筹将于<br /><strong>北京时间2015年1月5日上午8时</strong><br />通过<a href='http://dacx.com/play' target='_blank'>DacX.com</a>平台进行</p> -->
+          <% end %>
 
-          <div class="row">
-
-            <h2 style="margin-bottom:1em;">关于DACPLAY路线图的重大调整</h2>
-            <p>区块链技术的发展日新月异，在14年DACPLAY旧版白皮书出来当时，市面上还没有成熟的智能合约框架，当时以太坊的第一个版本还没有出来，DACPLAY项目本身发源于比特股社区，为了实现游戏合约以及支持更强的可扩展功能，DACPLAY基于比特股1.0的框架开发了一些列有趣的娱乐性应用，包括有奖日志，简单游戏，红包等等，得到了用户的肯定和好评 ...</p>
-
-            <a class="btn btn-success btn-lg withripple" href="roadmap-201706.html"><%= t('site.hero.read_full') %><div class="ripple-wrapper"></div></a>
-            <a class="btn btn-success btn-lg withripple" href="../pdf/roadmap_201706.pdf" target="_blank"><%= t('site.hero.download_pdf') %><div class="ripple-wrapper"></div></a>
-
-          </div>
+          <!-- latest post -->
+          <%= render :partial => "home_post", locals: { post: @post } if @post %>
 
           <% if false %>
           <div id="release" class="modal fade" tabindex="-1" role="dialog">

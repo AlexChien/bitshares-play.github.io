@@ -1,0 +1,25 @@
+<div class="row">
+
+  <h2 style="margin-bottom:1em;"><%= post.title %></h2>
+  <h3><%= post.subtitle %></h3>
+
+  <div class="text-left"><%= post.abstract.html_safe %></div>
+
+  <a class="btn btn-success btn-lg withripple" href="<%= post_path(post) %>"><%= t('site.hero.read_full') %><div class="ripple-wrapper"></div></a>
+  <!-- <a class="btn btn-success btn-lg withripple" href="../pdf/roadmap_201706.pdf" target="_blank"><%= t('site.hero.download_pdf') %><div class="ripple-wrapper"></div></a> -->
+
+</div>
+
+
+<% if false %>
+<div class="row">
+
+  <h2 style="margin-bottom:1em;">关于DACPLAY路线图的重大调整</h2>
+  <p>区块链技术的发展日新月异，在14年DACPLAY旧版白皮书出来当时，市面上还没有成熟的智能合约框架，当时以太坊的第一个版本还没有出来，DACPLAY项目本身发源于比特股社区，为了实现游戏合约以及支持更强的可扩展功能，DACPLAY基于比特股1.0的框架开发了一些列有趣的娱乐性应用，包括有奖日志，简单游戏，红包等等，得到了用户的肯定和好评 ...</p>
+
+  <a class="btn btn-success btn-lg withripple" href="roadmap-201706.html"><%= t('site.hero.read_full') %><div class="ripple-wrapper"></div></a>
+  <a class="btn btn-success btn-lg withripple" href="../pdf/roadmap_201706.pdf" target="_blank"><%= t('site.hero.download_pdf') %><div class="ripple-wrapper"></div></a>
+
+</div>
+
+<% end %>
