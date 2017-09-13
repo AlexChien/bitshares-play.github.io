@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Acgdp::Application.config.secret_key_base = '5b98630ef6a624f233a1a4959a5030cbdf9b8d60417a16e5d2860f29c878133cd9268044ea32c368d7c54633c330adae92e31a0e69d62f73140d45278f6cb626'
+Www::Application.config.secret_key_base = '5b98630ef6a624f233a1a4959a5030cbdf9b8d60417a16e5d2860f29c878133cd9268044ea32c368d7c54633c330adae92e31a0e69d62f73140d45278f6cb626'
