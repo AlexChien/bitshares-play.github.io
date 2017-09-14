@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
+  get 'cn' => 'home#locale_redirect', locale: 'zh-CN'
+  get 'en' => 'home#locale_redirect', locale: 'en'
+
   devise_for :users
   resources :users
 
