@@ -5,8 +5,11 @@ class Ability
   def initialize(user)
     if user && user.admin?
       can :access, :rails_admin       # only allow admin users to access Rails Admin
-      can :manage, :all
+      can :manage, Post
     end
+
+    can :read, User
+    can :manage, User, id: user.id
 
     # Define abilities for the passed in user here. For example:
     #
