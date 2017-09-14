@@ -42,7 +42,5 @@ RailsAdmin.config do |config|
     # history_show
   end
 
-  # config.model Post do
-  # end
 
 end

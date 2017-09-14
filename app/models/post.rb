@@ -50,8 +50,9 @@ class Post < ActiveRecord::Base
         # actually not needed in this case: default is "delete_#{field_name}" if the object responds to it
         delete_method :delete_cover
       end
-      field :publish_at do
+      field :publish_at, :datetime do
         help "可设置预约发布时间；如果不填表示不发布"
+        strftime_format "%Y-%m-%d %H:%M"
       end
 
       field :abstract, :ck_editor do
