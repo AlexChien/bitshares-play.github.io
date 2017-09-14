@@ -37,7 +37,9 @@ class Post < ActiveRecord::Base
     end
 
     edit do
-      field :title
+      field :title do
+        required true
+      end
       field :subtitle
       field :author do
          help "显示的作者名，如果不填，使用当前发布用户的显示名"
@@ -51,7 +53,13 @@ class Post < ActiveRecord::Base
       field :publish_at do
         help "可设置预约发布时间；如果不填表示不发布"
       end
-      field :content, :ck_editor
+
+      field :abstract, :ck_editor do
+        required true
+      end
+      field :content, :ck_editor do
+        required true
+      end
 
     end
 
